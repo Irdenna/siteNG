@@ -1,0 +1,110 @@
+<DOCTYPE html>
+
+<script type="text/javascript">
+timeend= new Date();
+// IE и FF по разному отрабатывают getYear()
+timeend= new Date(timeend.getYear()>1900?(timeend.getYear()+1):(timeend.getYear()+1901),0,1);
+// для задания обратного отсчета до определенной даты укажите дату в формате:
+// timeend= new Date(ГОД, МЕСЯЦ-1, ДЕНЬ);
+// Для задания даты с точностью до времени укажите дату в формате:
+// timeend= new Date(ГОД, МЕСЯЦ-1, ДЕНЬ, ЧАСЫ-1, МИНУТЫ);
+function time() {
+	today = new Date();
+	today = Math.floor((timeend-today)/1000);
+	tsec=today%60; today=Math.floor(today/60); if(tsec<10)tsec='0'+tsec;
+	tmin=today%60; today=Math.floor(today/60); if(tmin<10)tmin='0'+tmin;
+	thour=today%24; today=Math.floor(today/24);
+	timestr=today +" дней "+ thour+" часов "+tmin+" минут "+tsec+" секунд";
+	document.getElementById('t').innerHTML=timestr;
+	window.setTimeout("time()",1000);
+}
+</script>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+	<title>УВЗ</title>
+	<link rel="stylesheet" href="css/main.css">
+  </head>
+  
+  <body onload="time()">
+  	<div class="grid-init grid">
+  		<div class="gr">
+  	<main class="c1">
+	<header>
+		
+		<div class="conteiner">
+			<div class="heading clearfix">
+			<div class="heading clearfix">
+				 
+				<nav>
+					<ul class="menu">
+					<table>
+						<tr>
+							<li>
+							<td class="l">
+								<a href="index.html">Домашняя страница</a>
+							</td>
+							</li>
+							<li>
+							
+							</li>
+							<li>
+							
+							</li>
+							<li>
+							<td class="r">
+								<a href="https://vk.com/id106733232">Создатель сайта</a>
+							</td>
+							</li>
+						</tr>
+					</table>
+					</ul>
+				</nav>
+			</div>
+			<div class="titles">
+				<div class="t1">
+					Добро пожаловать!
+				</div>
+				<h1>
+					Рады видеть вас!
+				</h1>
+			</div>
+				
+		</div>
+	</header>
+	
+	
+	<section class="f">
+		<p>
+			<script type="text/javascript">
+				//alert('Хэлло ворлд');
+			</script>
+		</p>
+	<div class="conteiner">
+	<p>
+	<h2>
+		Новый год
+	</h2>
+Чудесный праздник, связанный с надеждами на лучшее в грядущем году, с ожиданием исполнения всех желаний. Есть такая примета: "Как встретишь новый год, так его и проживешь". Пусть наши советы помогут вам организовать красивый, веселый и интересный праздник.
+	</p>
+	</div>
+	</section>
+	
+	
+<p>Обратный отсчет времени<br>До нового года осталось <span id="t" style="font-size:20px"></span></p>
+	
+	
+	<footer>
+	<div class="conteiner">
+	</div>
+	</footer>
+</main>
+<aside class="l1"><img src="images\1.jpg" alt="загрузка/ошибка" width="600px"></aside>
+<aside class="r1"><img src="images\2.jpg" alt="загрузка/ошибка" width="400px"></aside>
+</div>
+</div>
+
+
+  </body>
+</html>
